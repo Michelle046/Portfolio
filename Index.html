@@ -285,7 +285,7 @@
         });
 
         // Contact form submission
-        const scriptURL = "https://script.google.com/macros/s/AKfycbw313qH43lDPKJ9Llj-_7FCiV5s59L6qzxpW4rmegXzFyMqeLuyJ7O8kjlWB8YttiIT/exec"
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxI-wB3gL2lEbJu-PpYvLz4UNIUxphvN71Ze3lhUcxcDfhhQ81v4VXUm2QTa-hi-0gmlg/exec"
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
 
@@ -293,12 +293,12 @@
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
-                    msg.innerHTML = "✓ Message sent successfully!"
+                    msg.innerHTML = "Message sent successfully!"
                     setTimeout(() => msg.innerHTML = "", 5000)
                     form.reset()
                 })
                 .catch(error => {
-                    msg.innerHTML = "✗ Error sending message. Please try again."
+                    msg.innerHTML = "Error sending message. Please try again."
                     console.error('Error!', error.message)
                 })
         })
